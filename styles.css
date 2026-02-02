@@ -1,0 +1,43 @@
+
+/* Small helper styles to match the "feel" of the original page */
+body { background: #fff; }
+.Results { margin-top: 10px; }
+.Results-Right h3, .Results-Left h3 { margin: 0; font-weight: 700; }
+.Line2, .Line3, .Line4 { border-top: 1px solid #e6e6e6; margin: 18px 0; }
+.Line3 { border-top-style: dashed; opacity: .7; }
+.MarginT20 { margin-top: 20px; }
+.MarginB20 { margin-bottom: 20px; }
+.Padding0 { padding: 0; }
+
+.printing { text-align: left; margin: 12px 0; }
+.printing a { display: inline-block; padding: 8px 14px; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; }
+.printing a:hover { background: #f7f7f7; }
+
+.R-back2 { font-weight: 700; }
+.R-back { font-weight: 700; }
+
+/* Make tables readable on mobile without extra libs */
+.table-responsive-stack td:before {
+  content: attr(data-label);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+  color: #444;
+}
+@media (min-width: 768px) {
+  .table-responsive-stack td:before { display:none; }
+}
+@media (max-width: 767px) {
+  .table-responsive-stack thead { display:none; }
+  .table-responsive-stack tr { display:block; border: 1px solid #eee; margin-bottom: 10px; }
+  .table-responsive-stack td { display:block; border: none !important; border-bottom: 1px solid #f0f0f0 !important; }
+  .table-responsive-stack td:last-child { border-bottom: none !important; }
+}
+
+/* Print: print only dvPrint */
+@media print {
+  body * { visibility: hidden !important; }
+  #dvPrint, #dvPrint * { visibility: visible !important; }
+  #dvPrint { position: absolute; left: 0; top: 0; width: 100%; }
+  #mydvPrint { display:none !important; }
+}

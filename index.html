@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>السجل الأكاديمى للطالب</title>
+
+  <!-- Bootstrap 3 (RTL) + FontAwesome 4 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-rtl@3.4.1/dist/css/bootstrap-rtl.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Optional: Tablesaw-like stacked tables on small screens (simple CSS fallback) -->
+  <link rel="stylesheet" href="./styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Print button (same ids as the saved page) -->
+    <div class="row">
+      <div class="mydvPrint col-xs-12 Padding0">
+        <div id="mydvPrint" class="printing">
+          <i class="fa fa-print"></i>
+          <a id="btnPrint" style="cursor:pointer;" class="hvr-sweep-to-right">طباعة</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Printable area -->
+  <div id="dvPrint">
+    <div class="container">
+      <!-- This block is present in the original page; we keep the same id -->
+      <div id="dvFinalSemester">
+        <br>
+        <h3 class="MarginB20"><span><span id="lblStdName1">—</span></span></h3>
+      </div>
+
+      <div class="Line4">&nbsp;</div>
+
+      <h2 class="MarginT20">السجل الأكاديمى للطالب</h2>
+
+      <div class="Results MarginT20">
+        <div class="row">
+          <div class="col-sm-6 col-xs-12 Results-Right"><h3 id="lblFacultyName">—</h3></div>
+          <div class="col-sm-6 col-xs-12 Results-Left" style="padding-bottom:10px;">
+            <span id="lblUniversityName">جامعة 6 أكتوبر</span><br>
+            <h3 id="lblSectorName">قطاع المعلوماتية</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="Line2">&nbsp;</div>
+
+      <div class="Results LineResult">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12">كود الطالب : <span><span id="lblStdCode">—</span></span></div>
+          <div class="col-md-4 col-sm-6 col-xs-12">أسم الطالب : <span><span id="lblStdName">—</span></span></div>
+          <div class="col-md-4 col-sm-6 col-xs-12">المرشد الأكاديمي : <span><span id="lblAcademicAdv">—</span></span></div>
+          <div class="col-md-4 col-sm-6 col-xs-12">الجنسية : <span><span id="lblNationality">—</span></span></div>
+          <div class="col-md-4 col-sm-6 col-xs-12">المستوى : <span><span id="lblStdLevel">—</span></span></div>
+          <div class="col-md-4 col-sm-6 col-xs-12">شعبة : <span><span id="lblStdSection">—</span></span></div>
+        </div>
+      </div>
+
+      <div class="Line3">&nbsp;</div>
+
+      <!-- Semesters will be rendered here -->
+      <div id="semestersRoot"></div>
+
+      <div class="Line3">&nbsp;</div>
+      <div class="text-center small text-muted" style="margin: 20px 0;">
+        جميع الحقوق محفوظة
+      </div>
+    </div>
+  </div>
+
+  <!-- Data + Renderer -->
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
